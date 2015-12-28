@@ -2,6 +2,8 @@
 \brief Niskopoziomowa obsluga kompasu. */
 
 
+
+
 #include "mag.h"
 
 

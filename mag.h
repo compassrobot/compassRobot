@@ -1,3 +1,6 @@
+#ifndef __MAG_H__
+#define __MAG_H__
+
 
 #include "i2c.h"
 
@@ -32,3 +35,5 @@ void hal_dev_mag3110_write_reg(uint8_t addr, uint8_t data);
 short iMagReadX(void);
 short iMagReadY(void);
 short iMagReadZ(void);
+
+#endif
