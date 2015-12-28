@@ -346,6 +346,7 @@ int less_or_more=0;
 int destination_deg=0;
 int now_deg=0;
 
+/** \brief Skret w prawo o okreslony kat */
 void turnRightC(int degrees)
 {
 	ready=0;
@@ -378,7 +379,7 @@ void turnRightC(int degrees)
 
 }
 
-
+/** \brief Skret w lewo o okreslony kat */
 void turnLeftC(int degrees)
 {
 	ready=0;
@@ -411,7 +412,7 @@ void turnLeftC(int degrees)
 
 }
 
-
+/** \brief Skret w lewo do okreslonego kierunku */
 void turnLeftDir(int dir)
 {
 	ready=0;
@@ -445,6 +446,7 @@ if(poprawka==1){poprawka_skret=1;}else{prostaJazda = 0;}
 
 }
 
+/** \brief Skret w prawo do okreslonego kierunku */
 void turnRightDir(int dir)
 {
 	ready=0;
@@ -456,19 +458,6 @@ void turnRightDir(int dir)
 	
 	setTracksDir((left>0)?FORWARD:REVERSE,(right>0)?FORWARD:REVERSE);
 	setTracksSpeed(fabs(left),fabs(right));
-	
-	
-	
-	SIM->SCGC6 |= SIM_SCGC6_TPM1_MASK;
-	TPM1->SC &= ~TPM_SC_CPWMS_MASK; // default set
-	TPM1->SC |= TPM_SC_PS(7); // the same TPM_SC_PS(0)
-	TPM1->CNT = 0x00; 
-	TPM1->MOD = 1000;
-	NVIC_ClearPendingIRQ(TPM1_IRQn);				/* Clear NVIC any pending interrupts on TPM0 */
-	NVIC_EnableIRQ(TPM1_IRQn);	
-	NVIC_SetPriority(TPM1_IRQn,1);		/* Enable NVIC interrupts source for TPM0 module */
-	TPM1->SC |= TPM_SC_CMOD(1);
-	TPM1->SC &= ~TPM_SC_TOIE_MASK;	
 		
 	//setTracksDir(FORWARD,REVERSE);
 	//setTracksSpeed(30,30);
@@ -478,7 +467,7 @@ void turnRightDir(int dir)
 	if(destination_deg<0){destination_deg+=360;}
 	less_or_more=LESS;
 
-	//SET TMP1 ch 0 
+	//SET TMP0 ch 0 
 	NVIC_ClearPendingIRQ(TPM1_IRQn);	
 	TPM1->CONTROLS[0].CnSC |= TPM_CnSC_CHIE_MASK;
 	TPM1->CONTROLS[0].CnV = 400;
@@ -487,42 +476,40 @@ void turnRightDir(int dir)
 												 |	TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK);
 	
 	TPM1->CONTROLS[0].CnSC &= ~(TPM_CnSC_ELSA_MASK);
-	
-	TPM1->CONTROLS[0].CnSC |= TPM_CnSC_CHIE_MASK;	
-	TPM1->CONTROLS[0].CnSC |= TPM_CnSC_CHF_MASK; 
-	TPM1->SC |= TPM_SC_TOF_MASK;
-	TPM1->SC |= TPM_SC_TOIE_MASK;
-
 }
+
+
+/** \brief Funkcja konczaca skrecania po skrecaniu o okreslony kat
+	\details Wylacza przerwania TPM1. Ustala prosta jazde robota. Nie zmienia predkosci*/
 
 void stopTurning(){
 	ready=1;
-	TPM1->CONTROLS[0].CnSC &= ~TPM_CnSC_CHIE_MASK;	
-	TPM1->CONTROLS[0].CnSC |= TPM_CnSC_CHF_MASK; 
-	TPM1->SC |= TPM_SC_TOF_MASK;
-	TPM1->SC &= ~TPM_SC_TOIE_MASK;
-	//SIM->SCGC6 &= ~SIM_SCGC6_TPM1_MASK;
-	
-	/*if(poprawka_skret==1){
+	if(poprawka_skret==1){
 		poprawka_skret=0;
-		//TPM1->CONTROLS[0].CnV = 1000;
 	}else{
 	TPM1->CONTROLS[0].CnSC &= ~TPM_CnSC_CHIE_MASK;	
-	}*/
+	}
 	setTracksSpeed(fabs(avg_predkosc),fabs(avg_predkosc));
 		setTracksDir((avg_predkosc>0)?FORWARD:REVERSE,(avg_predkosc>0)?FORWARD:REVERSE);
 	ready=1;
-	
+	left = avg_predkosc;
+	right = avg_predkosc;
 }
+
+
+/** \brief Funkcja obslugi przerwania TMP1
+	\details Sprawdza kat z kompasow i na tej podstawie decyduje czy robot skrecil do zadanego kata. Uzywana rowniez w funcki jazdy po prostej linii*/
 
 void TPM1_IRQHandler(void)
 {
 
 	
 	if((TPM1->CONTROLS[0].CnSC & TPM_CnSC_CHF_MASK) == TPM_CnSC_CHF_MASK){
+		
+		
+		
 			int temp=eCompass();
 
-		
 		
 		if(prostaJazda==0 || poprawka_skret==1){
 		
@@ -566,7 +553,7 @@ void TPM1_IRQHandler(void)
 }
 
 
-
+/** \brief Funkcja skrecania w lewo i nie zmieniajaca predkosci*/
 void turnLeft(void){
 	left=avg_predkosc-skret_speed;
 	right=avg_predkosc+skret_speed;
@@ -574,12 +561,15 @@ void turnLeft(void){
 	setTracksSpeed(fabs(left),fabs(right));
 }
 
+/** \brief Funkcja skrecania w prawo i nie zmieniajaca predkosci*/
 void turnRight(void){
 	left=avg_predkosc+skret_speed;
 	right=avg_predkosc-skret_speed;
 	setTracksDir((left>0)?FORWARD:REVERSE,(right>0)?FORWARD:REVERSE);
 	setTracksSpeed(fabs(left),fabs(right));
 }
+
+/** \brief Funkcja konczaca skrecanie i nie zmieniajaca predkosci*/
 void wyprostuj(void){
 	left=avg_predkosc;
 	right=avg_predkosc;
@@ -587,6 +577,8 @@ void wyprostuj(void){
 	setTracksSpeed(fabs(left),fabs(right));
 }
 
+
+/** \brief Zmiana predkosci z pozostawieniem wartosci skrecania*/
 void zmienPredkosc(uint8_t speed){
 		if( speed >= 0 && speed <= 90 )
 	{
@@ -599,6 +591,8 @@ void zmienPredkosc(uint8_t speed){
 	avg_predkosc=speed;
 }
 
+
+/** \brief Czekanie */
 void wait4(void)
 {
 	
@@ -607,16 +601,16 @@ void wait4(void)
 	
 }
 
+/** \brief Sprawdza czy robot skonczyl skrecac 
+	\return ready 0 jezeli robot ciagle skreca*/
 uint16_t ifReady(void)
 {
 	return ready;
 }
 
-void notReady(void)
-{
-	 ready=0;
-}
 
+/** \brief Funkcja wywyolujca skret robota, aby jechal po linii
+		\details W praktyce robot po uzyciu tej funkcji jedzie duzo bardziej krzywo niz bez uzycia tej funkcji. Pole magnetyczne w roznych miejscach sie bardzo rozni - roznice dochodza nawet do 90 stopni (sprawdzone klasycznym kompasem)*/
 
 void jedzProsto(void){
 	prostaJazda = 1;

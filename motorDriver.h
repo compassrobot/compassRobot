@@ -111,4 +111,3 @@ void jedzProsto(void);
 
 void wait4(void);
 uint16_t ifReady(void);
-void notReady(void);
