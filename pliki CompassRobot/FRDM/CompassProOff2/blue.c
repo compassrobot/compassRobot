@@ -140,26 +140,7 @@ void blueInit(void){
 	
 	 UART2->C2 |= UART_C2_TE_MASK; //wlaczyc nadajnik i odbiornik, rejestrze UART2->C2.
 	 UART2->C2 |= UART_C2_RE_MASK;
-	
-	/*
-	SIM->SCGC5|=SIM_SCGC5_PORTD_MASK;
-	SIM->SCGC4|=SIM_SCGC4_UART0_MASK;
-	
-	PORTD->PCR[6] |= PORT_PCR_MUX(3); //UART2_RX
-	PORTD->PCR[7] |= PORT_PCR_MUX(3); //UART2_TX
-	
-	 UART0->C2 &= ~UART_C2_TE_MASK; //zablokowac nadajnik i odbiornik, w rejestrze UART2->C2,
-	 UART0->C2 &= ~UART_C2_RE_MASK;
-	
-	//UART2->BDH  //ustawic 13-bitowa wartosc dzielnika, bedacego zródlem zegara dla odbiornika inadajnika. (156)
-	UART0->BDL = 0x9C;
-	
-	UART0->BDH &= ~UART_BDH_SBNS_MASK; //ustawic jeden bit stopu, w rejestrze UART2->BDH (bit SBNS),
-	UART0->C1 &= ~UART_C1_PE_MASK; //? ustawic dlugosc danej na 8 bitów oraz brak sprzetowej obslugi sprawdzania parzystosci,w rejestrze UART2->C1 (bity M i PE),
-  UART0->C1 &= ~UART_C1_M_MASK; 
-	
-	 UART0->C2 |= UART_C2_TE_MASK; //wlaczyc nadajnik i odbiornik, rejestrze UART2->C2.
-	 UART0->C2 |= UART_C2_RE_MASK;*/
+
 }
 
 void nadaj(uint16_t dane){
