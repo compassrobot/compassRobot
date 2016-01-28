@@ -1,0 +1,131 @@
+Dependencies for Project 'comrob', Target 'CMSIS-DAP': (DO NOT MODIFY !)
+F (.\main.c)(0x568113BF)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+I (slcd.h)(0x5656E398)
+I (leds.h)(0x564EF782)
+I (compass.h)(0x567ED9E5)
+I (mag.h)(0x567BF453)
+I (i2c.h)(0x54BCB7F0)
+I (mag2.h)(0x567F05E7)
+I (i2c1.h)(0x567BE61A)
+I (buttons.h)(0x564EF6F6)
+I (motorDriver.h)(0x56810854)
+I (blue.h)(0x567EE45F)
+F (.\leds.c)(0x565A192C)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\leds.o --omf_browse .\objects\leds.crf --depend .\objects\leds.d)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+I (leds.h)(0x564EF782)
+F (.\slcd.c)(0x5656E62C)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\slcd.o --omf_browse .\objects\slcd.crf --depend .\objects\slcd.d)
+I (slcd.h)(0x5656E398)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+F (.\compass.c)(0x56811375)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\compass.o --omf_browse .\objects\compass.crf --depend .\objects\compass.d)
+I (compass.h)(0x567ED9E5)
+I (mag.h)(0x567BF453)
+I (i2c.h)(0x54BCB7F0)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+I (mag2.h)(0x567F05E7)
+I (i2c1.h)(0x567BE61A)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x55AF3C42)
+I (leds.h)(0x564EF782)
+I (blue.h)(0x567EE45F)
+I (slcd.h)(0x5656E398)
+F (.\i2c.c)(0x565AEE74)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+I (i2c.h)(0x54BCB7F0)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+F (.\mag.c)(0x567BF45B)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\mag.o --omf_browse .\objects\mag.crf --depend .\objects\mag.d)
+I (mag.h)(0x567BF453)
+I (i2c.h)(0x54BCB7F0)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+F (.\buttons.c)(0x56599584)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\buttons.o --omf_browse .\objects\buttons.crf --depend .\objects\buttons.d)
+I (buttons.h)(0x564EF6F6)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+F (.\motorDriver.c)(0x56811E08)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\motordriver.o --omf_browse .\objects\motordriver.crf --depend .\objects\motordriver.d)
+I (motorDriver.h)(0x56810854)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+I (compass.h)(0x567ED9E5)
+I (mag.h)(0x567BF453)
+I (i2c.h)(0x54BCB7F0)
+I (mag2.h)(0x567F05E7)
+I (i2c1.h)(0x567BE61A)
+I (leds.h)(0x564EF782)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x55AF3C42)
+F (.\i2c1.c)(0x567BF32D)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\i2c1.o --omf_browse .\objects\i2c1.crf --depend .\objects\i2c1.d)
+I (i2c.h)(0x54BCB7F0)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+F (.\mag2.c)(0x567F05E6)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\mag2.o --omf_browse .\objects\mag2.crf --depend .\objects\mag2.d)
+I (mag2.h)(0x567F05E7)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+I (i2c1.h)(0x567BE61A)
+F (.\blue.c)(0x568148C9)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\blue.o --omf_browse .\objects\blue.crf --depend .\objects\blue.d)
+I (blue.h)(0x567EE45F)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
+I (slcd.h)(0x5656E398)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x55AF3C42)
+I (compass.h)(0x567ED9E5)
+I (mag.h)(0x567BF453)
+I (i2c.h)(0x54BCB7F0)
+I (mag2.h)(0x567F05E7)
+I (i2c1.h)(0x567BE61A)
+I (motorDriver.h)(0x56810854)
+F (RTE\Device\MKL46Z256xxx4\startup_MKL46Z4.s)(0x51C00508)(--cpu Cortex-M0+ --pd "__EVAL SETA 1" -g --apcs=interwork -I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include--pd "__UVISION_VERSION SETA 516" --pd "_RTE_ SETA 1" --pd "MKL46Z256xxx4 SETA 1"--list .\listings\startup_mkl46z4.lst --xref -o .\objects\startup_mkl46z4.o --depend .\objects\startup_mkl46z4.d)
+F (RTE\Device\MKL46Z256xxx4\system_MKL46Z4.c)(0x56599708)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I "C:\Users\Pioter\Desktop\ZUMO Official\CompassProOff2\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DMKL46Z256xxx4-o .\objects\system_mkl46z4.o --omf_browse .\objects\system_mkl46z4.crf --depend .\objects\system_mkl46z4.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\MKL46Z4.h)(0x51C00508)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm0plus.h)(0x5368D0FC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x5302F730)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.3.0\Device\Include\system_MKL46Z4.h)(0x51C00508)
