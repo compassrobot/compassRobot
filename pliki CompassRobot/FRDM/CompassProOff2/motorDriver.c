@@ -25,10 +25,7 @@ uint8_t flagTurning = 0;
 uint32_t turningSpeed = DEFAULT_TURNING_SPEED;
 
 uint16_t azimuth = 0;
-
 uint16_t tmp = 0;
-
-
 
 
 //Piotr Klasa variable:
@@ -349,105 +346,77 @@ int now_deg=0;
 
 void turnRightC(int degrees)
 {
-	ready=0;
-		
+	ready=0;	
 	left=avg_predkosc+skret_speed;
 	right=avg_predkosc-skret_speed;
 	prostaJazda = 0;
 	setTracksDir((left>0)?FORWARD:REVERSE,(right>0)?FORWARD:REVERSE);
 	setTracksSpeed(fabs(left),fabs(right));
-	
-	//setTracksDir(FORWARD,REVERSE);
-	//setTracksSpeed(30,30);
-	
-	 now_deg= eCompass();
+
+	now_deg= eCompass();
 	destination_deg=now_deg-degrees;
 	if(destination_deg<0){destination_deg+=360;}
 	less_or_more=LESS;
-while(ifReady()==0)checkKat();
-	
-
-
+	while(ifReady()==0)checkKat();
 }
 
 
 void turnLeftC(int degrees)
 {
 	ready=0;
-	
-	
 	left=avg_predkosc-skret_speed;
 	right=avg_predkosc+skret_speed;
 	prostaJazda = 0;
 	setTracksDir((left>0)?FORWARD:REVERSE,(right>0)?FORWARD:REVERSE);
 	setTracksSpeed(fabs(left),fabs(right));
-	
-	//	setTracksDir(REVERSE,FORWARD);
-	//	setTracksSpeed(30,30);
-	
-	 now_deg= eCompass();
+	now_deg= eCompass();
 	destination_deg=now_deg+degrees;
 	if(destination_deg>359){destination_deg-=360;}
 	less_or_more=MORE;
-	
-while(ifReady()==0)checkKat();
-
-
+	while(ifReady()==0)checkKat()
 }
 
 
 void turnLeftDir(int dir)
 {
-	ready=0;
-	
-	
+	ready=0;	
 	left=avg_predkosc-skret_speed;
 	right=avg_predkosc+skret_speed;
-if(poprawka==1){poprawka_skret=1;}else{prostaJazda = 0;}
+	if(poprawka==1){poprawka_skret=1;}else{prostaJazda = 0;}
 	setTracksDir((left>0)?FORWARD:REVERSE,(right>0)?FORWARD:REVERSE);
 	setTracksSpeed(fabs(left),fabs(right));
-	
-	//setTracksDir(REVERSE,FORWARD);
-	//setTracksSpeed(30,30);
-	
-	 now_deg= eCompass();
+	setTracksDir(REVERSE,FORWARD);
+	setTracksSpeed(30,30);	
+	now_deg= eCompass();
 	destination_deg=dir;
 	if(destination_deg>359){destination_deg-=360;}
 	less_or_more=MORE;
-	
-while(ifReady()==0)checkKat();
-	
-	
+	while(ifReady()==0)checkKat();
 
 }
 
 void turnRightDir(int dir)
 {
 	ready=0;
-
 	left=avg_predkosc+skret_speed;
 	right=avg_predkosc-skret_speed;
-	
-		if(poprawka==1){poprawka_skret=1;}else{prostaJazda = 0;}
-	
+	if(poprawka==1){poprawka_skret=1;}else{prostaJazda = 0;}
 	setTracksDir((left>0)?FORWARD:REVERSE,(right>0)?FORWARD:REVERSE);
 	setTracksSpeed(fabs(left),fabs(right));
-	
-	 now_deg= eCompass();
+	now_deg= eCompass();
 	destination_deg=dir;
 	if(destination_deg<0){destination_deg+=360;}
 	less_or_more=LESS;
-	
 	while(ifReady()==0)checkKat();
 	
 }
 
 void stopTurning(){
+
 	ledsOff();
 	setTracksSpeed(fabs(avg_predkosc),fabs(avg_predkosc));
-		setTracksDir((avg_predkosc>0)?FORWARD:REVERSE,(avg_predkosc>0)?FORWARD:REVERSE);
+	setTracksDir((avg_predkosc>0)?FORWARD:REVERSE,(avg_predkosc>0)?FORWARD:REVERSE);
 	ready=1;
-	
 	left = avg_predkosc;
 	right = avg_predkosc;
 }
@@ -456,9 +425,7 @@ void checkKat(void)
 {
 
 	int temp=eCompass();
-
 	ledGreenOn();
-
 	if(less_or_more==LESS){
 	if((destination_deg<now_deg && temp>now_deg+20)  || (temp<=destination_deg && (destination_deg<=now_deg ||  (destination_deg>=now_deg && temp>now_deg+20))))stopTurning();
 	}else{
@@ -503,16 +470,16 @@ void zmienPredkosc(uint8_t speed){
 
 void wait4(void)
 {
-	
 	int i = 0;
 	for( i = 0 ; i < 799990 ; i++){}
-	
 }
+
 
 uint16_t ifReady(void)
 {
 	return ready;
 }
+
 
 void notReady(void)
 {
@@ -520,16 +487,13 @@ void notReady(void)
 }
 
 
+
 void jedzProsto(void){
 	prostaJazda = 1;
 	kierunek = eCompass();
-	
 	NVIC_ClearPendingIRQ(TPM1_IRQn);	
 	TPM1->CONTROLS[0].CnSC |= TPM_CnSC_CHIE_MASK;
 	TPM1->CONTROLS[0].CnV = 400;
-	
-	TPM1->CONTROLS[0].CnSC |= (TPM_CnSC_MSA_MASK
-												 |	TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK);
-	
+	TPM1->CONTROLS[0].CnSC |= (TPM_CnSC_MSA_MASK |	TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK);
 	TPM1->CONTROLS[0].CnSC &= ~(TPM_CnSC_ELSA_MASK);
 }
